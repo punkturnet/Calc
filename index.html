@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calc</title>
+    <link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Libs -->
+    <script src="lib/jquery-2.1.4.min.js"></script>
+    <script src="lib/bootstrap.min.js"></script>
+
+  </head>
+  <body class="container">
+
+    <header>
+      <h1>Calculator for Trump</h1>
+    <header>
+
+    <section>
+      <form>
+        <div class="form-group">
+          <label for="num1">Number 1</label>
+          <input type="text" class="form-control" id="num1" placeholder="Number 1">
+        </div>
+        <div class="form-group">
+          <label for="num2">Number 2</label>
+          <input type="text" class="form-control" id="num2" placeholder="Number 2">
+        </div>
+        <h2 id="result"></h2>
+        <button type="submit" class="btn btn-default">Calc</button>
+      </form>
+    </section>
+
+    <script>
+      $(document).ready(function(){
+        $('button').click(function(e){
+          e.preventDefault();
+            var num1 = parseFloat($("#num1").val().replace(',','.'));
+            var num2 = parseFloat($("#num2").val().replace(',','.'));
+            var result = num1 + num2;
+            $('#result').html('Your result is ' + result.toString().replace('.',','));
+            return false;
+        });
+      });
+    </script>
+
+  </body>
+
+</html>
